@@ -32,10 +32,13 @@
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:text="@{quickaction.name}"
+            android:fontFamily="@font/avenir_book"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="@+id/quick_action_icon"
             app:layout_constraintStart_toEndOf="@+id/quick_action_icon"
             app:layout_constraintTop_toTopOf="@+id/quick_action_icon"
-            tools:text="Send Money" />
+            tools:text="Calculator" />
 
         <ImageView
             android:id="@+id/quick_action_state"
