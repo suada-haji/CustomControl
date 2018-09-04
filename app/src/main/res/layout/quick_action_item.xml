@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="quickaction"
+            type="com.haji.suada.customcontrolsapplication.model.QuickAction" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/quick_action_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:imageBinding="@{quickaction.drawable}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/quick_action_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@{quickaction.name}"
+            app:layout_constraintBottom_toBottomOf="@+id/quick_action_icon"
+            app:layout_constraintStart_toEndOf="@+id/quick_action_icon"
+            app:layout_constraintTop_toTopOf="@+id/quick_action_icon"
+            tools:text="Send Money" />
+
+        <ImageView
+            android:id="@+id/quick_action_state"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@{quickaction.isSelected ? @drawable/ic_remove : @drawable/ic_add}"
+            app:layout_constraintBottom_toBottomOf="@+id/quick_action_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/quick_action_name" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
