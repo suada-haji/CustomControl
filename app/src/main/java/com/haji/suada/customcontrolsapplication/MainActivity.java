@@ -32,7 +32,10 @@ public class MainActivity extends AppCompatActivity implements QuickActionAdapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_main );
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Customize Quick Actions");
+        }
         quickActions = new ArrayList<>();
         selectedQuickActions = new ArrayList<>();
         unselectedQuickActions = new ArrayList<>();
@@ -104,13 +107,20 @@ public class MainActivity extends AppCompatActivity implements QuickActionAdapte
     }
 
     private List<QuickAction> getQuickActions() {
-        quickActions.add(new QuickAction("Calculator", ContextCompat.getDrawable(this, R.drawable.ic_calculator), true));
-        quickActions.add(new QuickAction("Low Power Mode", ContextCompat.getDrawable(this, R.drawable.ic_low_battery), true));
-        quickActions.add(new QuickAction("Do Not Disturb While Driving", ContextCompat.getDrawable(this, R.drawable.ic_driving), true));
-        quickActions.add(new QuickAction("Accessibility shortcuts", ContextCompat.getDrawable(this, R.drawable.ic_accessibility), true));
-        quickActions.add(new QuickAction("Alarm", ContextCompat.getDrawable(this, R.drawable.ic_alarm), false));
-        quickActions.add(new QuickAction("Camera", ContextCompat.getDrawable(this, R.drawable.ic_camera), false));
-        quickActions.add(new QuickAction("Guided Access", ContextCompat.getDrawable(this, R.drawable.ic_access_guided), false));
+        quickActions.add(new QuickAction("Calculator", ContextCompat.getDrawable(this,
+                R.drawable.ic_calculator), true));
+        quickActions.add(new QuickAction("Low Power Mode", ContextCompat.getDrawable(this,
+                R.drawable.ic_low_battery), true));
+        quickActions.add(new QuickAction("Do Not Disturb While Driving", ContextCompat.getDrawable(this,
+                R.drawable.ic_driving), true));
+        quickActions.add(new QuickAction("Accessibility shortcuts", ContextCompat.getDrawable(this,
+                R.drawable.ic_accessibility), true));
+        quickActions.add(new QuickAction("Alarm", ContextCompat.getDrawable(this,
+                R.drawable.ic_alarm), false));
+        quickActions.add(new QuickAction("Camera", ContextCompat.getDrawable(this,
+                R.drawable.ic_camera), false));
+        quickActions.add(new QuickAction("Guided Access", ContextCompat.getDrawable(this,
+                R.drawable.ic_access_guided), false));
 
 
         return quickActions;
